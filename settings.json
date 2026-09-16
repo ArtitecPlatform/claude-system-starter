@@ -1,0 +1,49 @@
+{
+  "permissions": {
+    "allow": [],
+    "defaultMode": "acceptEdits"
+  },
+  "model": "opus",
+  "effortLevel": "high",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$HOME/.claude/hooks/gitnexus/gitnexus-hook.cjs\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$HOME/.claude/hooks/gitnexus/gitnexus-hook.cjs\""
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "superpowers@superpowers-dev": true,
+    "caveman@caveman": true
+  },
+  "extraKnownMarketplaces": {
+    "superpowers-dev": {
+      "source": { "source": "github", "repo": "obra/superpowers" }
+    },
+    "caveman": {
+      "source": { "source": "github", "repo": "JuliusBrussee/caveman" }
+    }
+  },
+  "tui": "fullscreen",
+  "theme": "dark-daltonized",
+  "agentPushNotifEnabled": true
+}

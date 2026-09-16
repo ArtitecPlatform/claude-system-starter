@@ -1,0 +1,36 @@
+{
+  "_comment": "Merge the `mcpServers` object into ~/.claude.json (user scope). Wrapper scripts pull credentials from Vault at runtime so no secret lives in this file. Drop any server you don't use.",
+  "mcpServers": {
+    "gitnexus": {
+      "command": "gitnexus",
+      "args": ["mcp"]
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp", "--headless"],
+      "env": {}
+    },
+    "github": {
+      "command": "/Users/<you>/.claude/scripts/mcp-github.sh"
+    },
+    "notion": {
+      "command": "/Users/<you>/.claude/scripts/mcp-notion.sh"
+    },
+    "mysql": {
+      "command": "/Users/<you>/.claude/scripts/mcp-mysql.sh"
+    },
+    "cloudflare": {
+      "command": "/Users/<you>/.claude/scripts/mcp-cloudflare.sh"
+    },
+    "firecrawl": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": {
+        "FIRECRAWL_API_URL": "http://<your-firecrawl-host>:3002",
+        "FIRECRAWL_API_KEY": "fc-self-hosted-no-auth"
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "Bash(python *)",
+      "Bash(pytest *)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git branch*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(alembic *)",
+      "Bash(pip install*)",
+      "Bash(source .venv/bin/activate*)"
+    ],
+    "ask": [
+      "Bash(rm *)",
+      "Bash(git push*)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(mysql *)",
+      "Bash(docker *)",
+      "WebSearch",
+      "WebFetch"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(sudo *)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)"
+    ]
+  }
+}
