@@ -8,6 +8,8 @@ things between sessions, and spends as few tokens as possible doing it.
 ```
 claude-system-starter/
 ├── README.md                  ← you are here
+├── docs/INSTRUCTIONS.md       ← step-by-step setup, daily loop, troubleshooting
+├── docs/BENEFITS.md           ← what each layer buys you
 ├── install.sh                 ← non-destructive copy into ~/.claude
 ├── CLAUDE.md                  ← global operating model (fill in <placeholders>)
 ├── RTK.md                     ← included by CLAUDE.md; bash-output compressor notes
@@ -15,7 +17,7 @@ claude-system-starter/
 ├── statusline-command.sh      ← "[model] ████░░ 42% context | $1.23" status bar
 ├── mcp-servers.example.json   ← merge into ~/.claude.json
 ├── commands/                  ← global slash commands (5)
-├── skills/                    ← global skills (21)
+├── skills/                    ← global skills (22)
 ├── hooks/gitnexus/            ← PreToolUse/PostToolUse hook for code-graph context
 ├── scripts/                   ← Vault-backed MCP wrappers (no secrets on disk)
 ├── memory/                    ← how the persistent memory convention works
@@ -34,6 +36,8 @@ Four layers, each independent, all optional:
 | **Memory** | One-fact-per-file memory dir with an index loaded every session. | `memory/README.md` |
 
 ## 2. Install
+
+Full walkthrough: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md). Why each piece exists: [docs/BENEFITS.md](docs/BENEFITS.md).
 
 ```bash
 git clone <this-kit> ~/claude-system-starter   # or unpack the tarball
@@ -79,6 +83,7 @@ Daily loop: `/sync` → work → `/status` → `/critique` (before main) → `/p
 
 **Ours (generic, MIT-ish, edit freely)**
 - `isolated-worktree` — start every branch in its own git worktree so concurrent sessions can't clobber each other.
+- `design-system-builder` — brand intake → tokens → live `/design-plate` → sweep script → generated `<brand>-design-system` project skill. Say "create a design system for this project".
 - `gitnexus-{guide,cli,exploring,debugging,impact-analysis,pr-review,refactoring}` — task-shaped GitNexus workflows.
 
 **Third-party (bundled for convenience; check upstream for updates)**
