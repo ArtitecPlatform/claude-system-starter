@@ -10,6 +10,7 @@ claude-system-starter/
 ├── README.md                  ← you are here
 ├── docs/INSTRUCTIONS.md       ← step-by-step setup, daily loop, troubleshooting
 ├── docs/BENEFITS.md           ← what each layer buys you
+├── docs/TERMINAL.md           ← what the session screen looks like and why
 ├── install.sh                 ← non-destructive copy into ~/.claude
 ├── CLAUDE.md                  ← global operating model (fill in <placeholders>)
 ├── RTK.md                     ← included by CLAUDE.md; bash-output compressor notes
