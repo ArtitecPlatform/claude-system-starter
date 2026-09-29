@@ -10,8 +10,13 @@ mkdir -p "$CODEX_DIR" "$SKILLS_DIR"
 copy() {
   local src="$1" dst="$2"
   if [[ -e "$dst" ]]; then
-    cp -R "$src" "$dst.kit-new"
-    printf 'exists; wrote %s\n' "$dst.kit-new"
+    local candidate="$dst.kit-new" suffix=1
+    while [[ -e "$candidate" ]]; do
+      candidate="$dst.kit-new.$suffix"
+      suffix=$((suffix + 1))
+    done
+    cp -R "$src" "$candidate"
+    printf 'exists; wrote %s\n' "$candidate"
   else
     cp -R "$src" "$dst"
     printf 'installed %s\n' "$dst"
