@@ -25,6 +25,13 @@ claude-system-starter/
 └── project-template/.claude/  ← what /init-project scaffolds inside each repo
 ```
 
+## Codex edition
+
+This repository also includes a Codex setup: [`codex/`](codex/). Install it with
+`cd codex && ./install.sh`. It installs global `AGENTS.md`, project scaffolding,
+and `$sync`, `$status`, `$push`, `$critique`, and `$init-project` skills. It leaves
+Codex config and credentials untouched.
+
 ## 1. The stack, in one paragraph
 
 Four layers, each independent, all optional:
